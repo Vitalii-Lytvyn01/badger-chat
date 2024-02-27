@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #a7bcff;
+
+  .container {
+    display: flex;
+    width: 65%;
+    height: 80%;
+
+    border: 1px solid white;
+    border-radius: 20px;
+
+    overflow: hidden;
+  }
+}
