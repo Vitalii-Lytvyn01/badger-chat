@@ -1,3 +1,128 @@
 .chat {
-  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 4;
+  flex-basis: 75%;
+
+  background-color: #fff;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+
+    padding: 0 15px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #5d5b8d;
+  }
+
+  &__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    height: calc(100% - 150px); 
+
+    background-color: #8a88c5;
+
+    padding: 15px;
+
+    .message {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 10px;
+
+      &__img {
+        width: 30px;
+        height: 30px;
+        align-self: flex-end;
+        
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &__content {
+        display: flex;
+        background-color: white;
+        border-radius: 5px 5px 5px 0px;
+        -webkit-border-radius: 5px 5px 5px 0px;
+        -moz-border-radius: 5px 5px 5px 0px;
+        padding: 5px 10px;
+
+        max-width: 75%;
+        min-width: 1em;
+
+        text-overflow: ellipsis;
+      }
+    }
+
+    .self {
+      justify-content: flex-end;
+      align-self: flex-end;
+
+      .message__content {
+        background-color: rgb(221, 221, 221);
+        border-radius: 5px 5px 0px 5px;
+        -webkit-border-radius: 5px 5px 0px 5px;
+        -moz-border-radius: 5px 5px 0px 5px;
+      }
+
+      .message__img {
+        display: none;
+      }
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    width: 100%;
+
+    padding: 0 10px;
+
+    background-color: white;
+
+    .message-input {
+      font-size: 20px;
+      height: 50%;
+      flex-grow: 1;
+
+      padding: 0 10px;
+      border: none;
+
+      outline: none;
+    }
+
+
+    .buttons-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .button-icon {
+        width: 26px;
+        height: 26px;
+
+        background-repeat: no-repeat;
+        background-size:cover;
+
+        cursor: pointer;
+      }
+
+      .upload-file {
+        background-image: url('../../assets/attach_file.svg');
+      }
+
+      .upload-image {
+        background-image: url('../../assets/add_photo.svg');
+      }
+    }
+  }
 }
