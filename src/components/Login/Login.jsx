@@ -1,7 +1,10 @@
 import React from 'react'
 import './Login.scss';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='formContainer'>
       <div className="formWrapper">
@@ -12,7 +15,9 @@ export const Login = () => {
           <input type="password"  placeholder='Password'/>
           <button>Login</button>
         </form>
-        <p>Don't have an account? Register</p>
+        <p>Don't have an account? 
+          <span onClick={() => navigate("/register")}> Register</span>
+        </p>
       </div> 
     </div>
   )

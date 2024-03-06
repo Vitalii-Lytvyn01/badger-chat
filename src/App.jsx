@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import './App.scss'
-import { Register } from './components/Register/Register'
-import { Login } from './components/Login/Login'
-import Home from './components/Home/Home'
+import { Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 
 function App() {
 
   return (
     <>
-    <Register />
-    {/* <Login/> */}
-    {/* <Home/> */}
+    <Outlet />
     </>
   )
 }
