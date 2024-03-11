@@ -52,7 +52,7 @@ export const Register = () => {
             photoURL: downloadURL
           });
 
-          navigate("/chats")
+          navigate("/")
         });
       }
     );
@@ -95,8 +95,11 @@ export const Register = () => {
           <button>Sign Up</button>
         </form>
         {error ? <span>An error has occured</span> : ''}
-        <p>You do have an account? 
-          <span onClick={() => navigate('/login')}> Login</span>
+        <p>You do have an account?
+          <span
+            className='link'
+            onClick={() => navigate('/login')}
+          >Login</span>
         </p>
       </div> 
     </div>
