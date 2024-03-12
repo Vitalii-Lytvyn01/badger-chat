@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Sidebar.scss'
 import { Navbar } from '../Navbar/Navbar'
 import { Search } from '../Search/Search'
 
 export const Sidebar = () => {
 
-  console.log(document)
+  const [chats, setChats] = useState([]);
 
   return (
     <div className='sidebar'>

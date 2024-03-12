@@ -42,7 +42,8 @@ export const Login = () => {
         <p>Don't have an account? 
           <span 
             className='link'
-            onClick={() => navigate("/register")}> Register</span>
+            onClick={() => navigate("/register")}> Register
+          </span>
         </p>
       </div> 
     </div>
