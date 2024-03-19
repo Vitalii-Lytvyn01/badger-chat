@@ -10,13 +10,12 @@ export const AuthContextProvider = ({children}) => {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      console.log('onAuthStateChanged',user);
     })
 
     return () => {
       unsub();
     }
-  },[]);
+  },[]);    
 
   return (
     <AuthContext.Provider value={{currentUser}}>

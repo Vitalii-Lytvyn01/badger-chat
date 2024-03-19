@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames';
+import { AuthContext } from '../../context/AuthContext';
+import { ChatContext } from '../../context/ChatContext';
 
 export default function Message({message, self}) {
+
+  const {currentUser} = useContext(AuthContext);
+  const {data} = useContext(ChatContext);
+
   return (
     <div className={classNames("message", {self: self})}>
       <img
