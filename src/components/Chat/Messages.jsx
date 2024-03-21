@@ -3,10 +3,12 @@ import Message from './Message'
 import { ChatContext } from '../../context/ChatContext';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../misc/firebase';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Messages() {
 
   const {data} = useContext(ChatContext);
+  const {currentUser} = useContext(AuthContext);
   const [messages,setMessages] = useState([]);
 
   useEffect(() => {
@@ -17,7 +19,7 @@ export default function Messages() {
     return () => unsub()
   },[data.chatId]);
 
-  console.log(messages);
+  console.log(data);
 
   return (
     <div className="chat__messages">
@@ -25,8 +27,10 @@ export default function Messages() {
         messages.map((m) => (
           <Message
             key={m.id}
-            message={"message"}
-            self={false}
+            message={m.text}
+            self={currentUser.uid == m.senderId}
+            imgUrl={m.img}
+            userImg={data.user.photoURL}
         />
         ))
       }

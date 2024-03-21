@@ -14,7 +14,7 @@ export const Sidebar = () => {
 
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
-      setChats(Object.entries(doc.data()));
+      setChats(Object.entries(doc.data()).sort(((a,b) => a[1].date - b[1].date)));
   });
 
     return () => {
